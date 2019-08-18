@@ -1,0 +1,48 @@
+<div *ngIf="initialData" id="filter_section">
+    <div id="brands">
+        <h4>Brands</h4>
+        <div *ngFor="let brand of filteredBrands">
+            <mat-checkbox [checked]="brand.isChecked" 
+            (change)="applyBrandFilter(brand)">
+            {{brand.name}}
+            </mat-checkbox>
+        </div>
+        
+    </div>
+    <div id="prices">
+            <h4>Prices</h4>
+            <div *ngFor="let price of filteredPrices">
+                    <mat-checkbox [checked]="price.isChecked" 
+                    (change)="applyPriceFilter(price)">
+                    {{price.name}}
+                    </mat-checkbox>
+                </div>
+    </div>
+    <div id="discount">
+            <h4>Discount</h4>
+            <div *ngFor="let discount of filteredDiscount">
+                    <mat-checkbox [checked]="discount.isChecked" 
+                    (change)="applyDiscountFilter(discount)">
+                    {{discount.name}}
+                    </mat-checkbox>
+                </div>
+    </div>
+    <div id="packSize"> 
+            <h4>PackSize</h4>
+        <div *ngFor="let packSize of filteredPackSize">
+            <mat-checkbox [checked]="packSize.isChecked" 
+            (change)="applyPackSizeFilter(packSize)">
+            {{packSize.amount}} {{packSize.suffix}}
+            </mat-checkbox>
+        </div>
+    </div>
+    <div id="foodPreferences">
+            <h4>Food Preferenes</h4>
+        <div *ngFor="let foodpref of filteredFoodPreferences">
+            <mat-checkbox [checked]="foodpref.isChecked" 
+            (change)="applyFoodPreferenceFilter(foodpref)">
+            {{foodpref.foodType}}
+            </mat-checkbox>
+        </div>
+    </div>
+</div>
